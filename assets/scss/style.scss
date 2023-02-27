@@ -1,0 +1,632 @@
+// @import "color";
+@import "fonts";
+// @import "mixin";
+
+$black:#000;
+$white:#fff;
+$btn-bg:#F2AE2EAF;
+$secondary-bg:#F8F8F8;
+$blackbtn:#707070;
+$blue:#000080;
+
+
+@mixin nunitoFont{
+    font-family: 'Nunito', sans-serif;
+}
+@mixin robotoFont{
+font-family: 'Roboto', sans-serif;
+}
+@mixin borderRadius{
+    border-radius: 4px;
+}
+@mixin boxShadow{
+    box-shadow: 0px 3px 6px #00000029;
+}
+@mixin changeLangHdng{
+    font-weight: 700;
+        margin-right: 10px;
+        text-decoration: underline;
+}
+@mixin blackbtn{
+    padding: 10px 15px;
+    background:  rgba($black, .7);
+    color: $white;
+    @include nunitoFont;
+    font-weight: 700;
+    font-size: 1.6rem;
+    @include borderRadius;
+    img{
+        margin-left: 15px;
+    }
+}
+@mixin subhdngTxt{
+    @include nunitoFont;
+    font-size: 2.4rem;
+    color: $black;
+    font-weight: 500;
+    @media (max-width:768px){
+        font-size: 1.8rem;
+    }
+}
+@mixin descTxt{
+    @include robotoFont;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: $black;
+}
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    /* 62.5% of 16px base font size is 10px */
+    font-size: 62.5%;
+  }
+  
+  body {
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+  }
+  .hdng-fixed{
+    position: fixed;
+    background: $white;
+    z-index: 9;
+  }
+.navBar-menu{
+    padding: 20px 60px 10px 60px;
+    @include boxShadow;
+    .logo-section{
+        display: flex;
+    align-items: center;
+    img{
+        height: 55px;
+    }
+    }
+    .navListMenu{
+        margin: 0;
+        padding: 0;
+        .navListText{
+            list-style: none;
+            display: inline-block;
+            @include nunitoFont;
+            font-size: 1.6rem;
+            margin-right: 20px;
+            font-weight: 500;
+            position: relative;
+            cursor: pointer;
+            &.store{
+                margin-right: 0;
+                padding: 10px 12px;
+                background: $btn-bg;
+                @include borderRadius;
+                @include boxShadow;
+            }
+            .dropdown-content{
+                background: $secondary-bg;
+                padding: 15px 25px;
+                position: absolute;
+                display: none;
+                min-width: 125px;
+                a{
+                    display: block;
+                    color: $black;
+                    text-decoration: none;
+                    &:not(:last-child){
+                        margin-bottom: 10px;
+                    }
+                }                
+            }
+            &:hover:not(:last-child){
+                text-decoration:underline 3px $btn-bg;
+                .dropdown-content{
+                display: block;
+                }
+            }
+        }
+        
+    }
+    .change{
+       
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+
+        img{
+            margin-right: 5px;
+            &:first-child{
+                margin-left: 10px;
+            }
+        }
+        
+        .language{
+            @include robotoFont;
+            font-weight: 400;
+        }
+    }
+}
+.heading{
+    @include nunitoFont;
+    @include changeLangHdng;
+
+}
+#changeLanguage{
+    .modal-dialog.modal-dialog-centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-content{
+        min-width: 380px;
+        width: auto;
+    }
+    .form-check{
+        padding-left: 35px;
+        &:not(:last-child){
+        margin-bottom: 15px;
+        }
+    }
+    .modal-header,.modal-footer{
+        border: none;
+        padding-bottom: 0;
+    }
+    .modal-body{
+        padding: 0 0 35px 35px;
+        .heading{
+            margin-bottom: 20px;
+        }
+    }
+    .language {
+        min-width: 63px;
+        display: inline-flex;
+        margin-right: 30px;  
+        @include robotoFont;
+        font-size: 1.6rem;
+        font-family: 400;    
+    }
+    .form-check-label{
+        img{
+            margin-left: 5px;
+        }
+    }
+    .modal-footer{
+        margin: 0 35px 35px 0;
+        padding: 0;
+        .btn{
+            padding: 5px 15px;
+            @include borderRadius;
+            @include nunitoFont;
+            font-weight: 700;
+            font-size: 1.6rem;
+        }
+        .cancelBtn{
+            background: $blackbtn;
+            color: $white;
+        }
+        .submitBtn{
+            color: $black;
+            background: $btn-bg;
+            margin-left: 10px;
+        }
+    }
+    .form-check-input:checked {
+        background-color: $blackbtn;
+        border-color: $blackbtn;
+    }
+    .form-check-input:focus{
+        box-shadow: none;
+    }
+}
+::placeholder{
+    color: $black;
+    opacity: 0.5;
+    @include robotoFont;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+.search-bar{
+    padding: 30px 0;
+   
+    input{
+        width: 36%;
+        border: 1px solid $blackbtn;
+        @include borderRadius;
+        padding: 5px 10px;
+    }
+    .srchBtn{
+        position: relative;
+        img{
+            position: absolute;
+            left: -36px;
+            top: -7px; 
+        }
+    }
+}
+.empty-block{
+height: 220px;
+}
+.empty-block2{
+    height: 38px;
+}
+  
+#carouselImages{
+    .carousel-item>img,.carousel {
+        height: 450px;
+    }
+    .carousel-control-next,.carousel-control-prev{
+        opacity: 0.7;
+    }
+    .carousel-control-prev-icon,.carousel-control-next-icon{
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        background: rgba($black, .7);
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    }
+     .carousel-indicators{
+        margin: auto;
+        margin-bottom: -38px;
+    }
+    .carousel-indicators [data-bs-target] {
+        box-sizing: content-box;
+        flex: 0 1 auto;
+        width: 16px;
+        height: 16px;
+        padding: 0; 
+        margin-right: 3px;
+        margin-left: 3px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        opacity: .5;
+        transition: opacity .6s ease;
+        border-radius: 50%;
+        border: 1px solid rgba($black, .7);
+    }
+    .carousel-indicators .active{
+        background-color:  rgba($black, .7);
+
+    }
+    .carousel-caption {
+        position: absolute;
+        right: 13%;
+        bottom: 1.25rem;
+        left: inherit;
+        padding-top: 0;
+        padding-bottom: 0;
+        color: #fff;
+        text-align: center;
+        .carousel-caption-btn{
+            @include blackbtn;
+
+            img{
+                margin-left: 15px;
+            }
+        }
+    }
+    
+}
+.body-padding{
+    padding: 0 60px;
+}
+.heading-txt{
+    @include nunitoFont;
+    font-weight: 700;
+    font-size: 3.2rem;
+    margin: 30px 0 20px 0;
+    &>.col{
+        padding-left: 0;
+    }
+}
+.ovrflw {
+    overflow-x: hidden;
+    &:hover{
+        overflow-x: scroll;
+    }
+}
+.strategic-objective{
+    padding-bottom: 25px;
+    display: flex;
+    
+    a{
+        color: $black;
+        text-decoration: none;
+    }
+    .strategic-objective-item{
+        list-style: none;
+        min-width: 420px;
+        @include boxShadow;
+        @include borderRadius;
+        display: inline-block;
+        &:not(:last-child){
+            margin-right: 35px;
+        }
+        .strategic-objective-item-body{
+            padding: 20px;
+            .sub-hdng{
+                @include subhdngTxt;
+            }
+            .description{
+                margin: 20px 0;
+                @include descTxt;
+            }
+            .read-more{
+                @include blackbtn;
+            }
+        }
+    }
+}
+.news-section{
+    .news-item{
+        .news-item-list{
+            list-style: none;
+            background: $secondary-bg;
+            padding: 25px;
+            @include boxShadow;
+            margin-bottom: 35px;
+            .img-section{
+                @include borderRadius;
+            }
+            .news-published{
+                color: $blue;
+                .date{
+                    margin-left: 30px;
+                }
+            }
+            .newshdng{
+                @include subhdngTxt;
+                margin: 10px 0 20px 0;
+            }
+            .news-text{
+                @include descTxt;
+            }
+            .read-more{
+                @include descTxt;
+                color: $blue;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+.explore-more{
+    @include blackbtn;
+}
+.snapcards{
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.snap-list{
+    max-width: 305px;
+    list-style: none;
+    background: $secondary-bg;
+    padding: 12px 0 12px 12px;
+    display: inline-block;
+    @include boxShadow;
+    .snap-desctxt,.snap-descyr{
+        @include robotoFont;
+        margin: 5px 0 20px 0;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+    .snap-hdng{
+        @include subhdngTxt;
+    }
+    .snap-descyr{
+        
+        font-weight: 500;
+    }
+    .snap-blue{
+        color: $blue;
+    }
+}
+
+.footer-section{
+    margin-top: 100px;
+    padding: 50px;
+    background: $secondary-bg;
+    padding-bottom: 5px;
+    .footer-hdng{
+        @include subhdngTxt;
+
+    }
+    .foot-txt{
+        margin-top: 10px;
+        @include descTxt;
+        font-weight: 500;
+    }
+    .copyright{
+        margin-top: 100px;
+    }
+    .subalign{
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+    .subscribe{
+        position: relative;
+        
+        input{
+            width: 100%;
+            // height: 50px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid $blackbtn;
+        }
+        button{
+            background: $btn-bg;
+            position: absolute;
+            
+    border-radius: 0 10px 10px 0;
+    @include nunitoFont;
+    font-size: 2.4rem;
+   
+    padding: 10px 15px;
+    
+    font-size: 1.6rem;
+    font-weight: 500;
+    right: 0;
+        }
+    }
+    img.social-ftr {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .scl-media {
+        margin-top: 45px;
+    }
+}
+
+.rightside {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    .social-ftr{
+        width: 40px;
+        height: 40px;
+        display: block;
+        cursor: pointer;
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.btn:focus{
+    box-shadow: none;
+}
+.hide{
+    display: none;
+}
+
+@media (min-width:768px){
+    .large-hide,.mobile-side-nav{
+        display: none;
+    }
+}
+// mobile query starts here
+@media (max-width:768px){
+    .mb-hide{
+        display: none;
+    }
+    .navBar-menu {
+        padding: 12px 16px;
+        .logo-section{
+            display: block;
+        }
+    }
+    .search-bar input {
+        width: 85%;
+    }
+    #carouselImages .carousel-item > img, #carouselImages .carousel {
+        height: 200px;
+    }
+    .body-padding {
+        padding: 0 16px;
+    }
+    .heading-txt {
+        font-size: 1.8rem;
+    }
+    .snapcards {
+        margin-bottom: 20px;
+        display: block;
+    }
+    .snap-list {
+        margin-bottom: 15px;
+    }
+    .footer-section {
+        padding: 16px;
+        margin-top: 50px;
+        text-align: center;
+    }
+    .col-md-3.text-end.scl-mb {
+        text-align: center !important;
+        margin-top: 21px;
+    }
+    .footer-section .copyright {
+        margin-top: 50px;
+    }
+    .empty-block {
+        height: 180px;
+    }
+    #carouselImages .carousel-indicators [data-bs-target] {
+        width: 9px;
+        height: 9px;
+    }
+    #carouselImages .carousel-control-prev-icon, #carouselImages .carousel-control-next-icon {
+        width: 25px;
+        height: 25px;
+        img{
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.mobile-side-nav{
+    width: 80%;
+    height: 100vh;
+    background: $secondary-bg;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    padding: 25px;
+    .change{
+       
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        text-align: left;
+
+        img{
+            margin-right: 5px;
+            &:first-child{
+                margin-left: 10px;
+            }
+        }
+        
+        .language{
+            @include robotoFont;
+            font-weight: 400;
+            margin-left: 25%;
+        }
+    }
+
+    .accordion-item {
+        background:transparent;
+        @include boxShadow;
+        border: none;
+        margin-bottom: 15px;
+    }
+    .accordion-button:not(.collapsed),.accordion-button {
+        color: $black;
+        background-color: transparent;
+        box-shadow: none;
+        @include nunitoFont;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    .accordion-body{
+        a{
+            text-decoration: none;
+            display: block;
+            color: $black;
+            margin-bottom: 5px;
+            @include nunitoFont;
+            font-weight: 400;
+            font-size: 1.6rem;
+            margin-left: 25px;
+        }
+    }
+}

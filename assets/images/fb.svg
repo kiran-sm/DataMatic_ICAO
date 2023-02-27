@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_12" data-name="Ellipse 12" cx="25" cy="25" r="25" transform="translate(2004 4121)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_6" data-name="Mask Group 6" transform="translate(-2004 -4121)" clip-path="url(#clip-path)">
+    <g id="_2cd88d61688e7ceae8a4fc1b21539e22" data-name="2cd88d61688e7ceae8a4fc1b21539e22" transform="translate(2004 4121)">
+      <path id="Path_23" data-name="Path 23" d="M50,25A25,25,0,1,0,21.094,49.7V32.227H14.746V25h6.348V19.492c0-6.266,3.732-9.727,9.443-9.727a38.444,38.444,0,0,1,5.6.488v6.152H32.98c-3.106,0-4.074,1.927-4.074,3.9V25H35.84l-1.108,7.227H28.906V49.7A25.006,25.006,0,0,0,50,25Z" fill="#1877f2"/>
+      <path id="Path_24" data-name="Path 24" d="M34.731,32.227,35.84,25H28.906V20.31c0-1.977.969-3.9,4.074-3.9h3.152V10.254a38.444,38.444,0,0,0-5.6-.488c-5.71,0-9.443,3.461-9.443,9.727V25H14.746v7.227h6.348V49.7a25.264,25.264,0,0,0,7.813,0V32.227Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>
